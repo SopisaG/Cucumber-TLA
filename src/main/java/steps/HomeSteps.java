@@ -5,6 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import utils.WebDriverUtils;
 
 public class HomeSteps {
@@ -15,17 +17,20 @@ public class HomeSteps {
        // HomeImpl  impl = new HomeImpl();
         impl.navigateToHomepage();
     }
-    @Then("I should be able to see Saucedemo link text")
-    public void i_should_be_able_to_see_saucedemo_link_text() {
-        Assert.assertEquals("Saucedemo", impl.getPage().sauceDemoLink.getText());
-    }
-    @When("I click Saucedemo link text")
-    public void i_click_saucedemo_link_text() {
-        impl.openLinkInNewWindowAndSwitch("saucedemo");
+    @Then("I should be able to see {string} link text")
+    public void iShouldBeAbleToSeeLinkText(String linkText) {
+        String actualText = impl.getLinkText(linkText);
+        Assert.assertEquals(linkText, actualText);
     }
 
-    @Then("Title of the page should be Swag Labs")
-    public void titleOfThePageShouldBeSwagLabs() {
-        Assert.assertEquals("Swag Labs", WebDriverUtils.getDriver().getTitle());
+    @When("I click {string} link text")
+    public void i_click_saucedemo_link_text(String linkText) {
+        impl.openLinkInNewWindowAndSwitch(linkText);
     }
+
+    @Then("Title of the page should be {string}")
+    public void i_should_see_swag_labs_title(String expectedTitle) {
+        Assert.assertEquals(expectedTitle, WebDriverUtils.getDriver().getTitle());
+    }
+
 }

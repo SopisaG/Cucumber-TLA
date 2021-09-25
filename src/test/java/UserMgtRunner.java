@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
                 "rerun:target/failed-scenarios/userMgtRunner.txt"},
         features = "src/main/resources/features/userMgt.feature",
         glue = {"steps"},
-        stepNotifications = true,
-        dryRun = false
+        stepNotifications = true
+
 )
 
 public class UserMgtRunner {

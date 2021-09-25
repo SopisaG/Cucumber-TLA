@@ -25,6 +25,10 @@ public class HomeImpl {
         switch (linkText.toLowerCase()) {
             case "saucedemo": getPage().sauceDemoLink.click();
             break;
+            case "e-commerce": getPage().ecommerceLink.click();
+            break;
+            case "shopping cart": getPage().shoppingCartLink.click();
+            break;
             default:
                 System.out.println("Invalid link text");
         }
@@ -35,4 +39,23 @@ public class HomeImpl {
                 WebDriverUtils.getDriver().switchTo().window(eachWindow);
         }
     }
+
+    public String getLinkText(String linkText) {
+        String actualText = "";
+
+        switch (linkText.toLowerCase()) {
+            case "saucedemo": actualText = getPage().sauceDemoLink.getText();
+            break;
+            case "e-commerce": actualText = getPage().ecommerceLink.getText();
+                break;
+            case "shopping cart": actualText = getPage().shoppingCartLink.getText();
+                break;
+            case "php travels": actualText = getPage().phpTravelsLink.getText();
+                break;
+            default:
+                System.out.println("link text was not found...");
+        }
+        return actualText;
+    }
+
 }

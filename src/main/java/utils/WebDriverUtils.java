@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class WebDriverUtils {
     //singleton WebDriver
-    private static WebDriver driver;
+    private static WebDriver driver = null;
 
     public static WebDriver getDriver() {
         if(driver == null)
@@ -33,10 +33,6 @@ public class WebDriverUtils {
         }
     }
 
-    public static void main(String[] args) {
-        getDriver().findElement(By.xpath("")).click();
-        quitDriver();
-    }
 
     private static void initializeDriver() {
         switch (ConfigReader.readProperty("browser")) {

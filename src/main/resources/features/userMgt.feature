@@ -1,34 +1,24 @@
 Feature: User Management page scenarios
+  Background:
+    Given I navigate to homepage
+    When I open User-Mgt page
 
   Scenario: Verify title of the page
-    Given I navigate to homepage
-    When I open User-Mgt page
-    Then Title of the page should be Register New User
+    Then Title of the page should be "Register New User"
 
+  @smoke
   Scenario: Verify Login button is present
-    Given I navigate to homepage
-    When I open User-Mgt page
     Then I should see Login button
 
+  @regression
   Scenario: Verify Access DB button is present
-    Given I navigate to homepage
-    When I open User-Mgt page
     Then I should see Access DB button
 
-    Scenario: Verify title of the page is User DB
-      Given I navigate to homepage
-      When I open User-Mgt page
-      When I open Access DB page
-      Then Title of the page should be User DB
-
-  Scenario: Verify title of the page is Login Page
-    Given I navigate to homepage
-    When I open User-Mgt page
-    When I open Login page
-    Then Title of the page should be Login Page
-
-  Scenario: Verify tla image is loaded
-    Given I navigate to homepage
-    When I open User-Mgt page
-    When I open Login page
-    Then I should see TLA image
+    Scenario: Verify user registration form
+      Then I input "firstname" as "Jane"
+      And I input "lastname" as "Doe"
+      And I input "phone number" as "1234567890"
+      And I input "email" as "jane.doe@tla.com"
+      And I input "role" as "student"
+      And I click on "Submit" button
+      Then I should see all fields displayed on user table

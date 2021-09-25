@@ -1,2 +1,8 @@
-package pages;public class DatabasePage {
+package pages;
+
+import impl.DatabaseImpl;
+import io.cucumber.java.en.And;
+
+public class DatabasePage {
+
 }
