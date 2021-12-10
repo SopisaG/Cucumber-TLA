@@ -13,4 +13,6 @@ public class LoginPage {
 
     @FindBy(xpath = "//form[@id='login-form']//img[@class='avatar']")
     public WebElement tlaLogo;
+
+
 }

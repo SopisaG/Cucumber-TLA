@@ -48,8 +48,31 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
         </dependency>
-
+<!--        new added today 10/2 class-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.0.0</version>
+        </dependency>
 
     </dependencies>
+
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>2.17</version>-->
+<!--                <configuration>-->
+<!--                    <forkCount>4</forkCount>-->
+<!--                    <includes>-->
+<!--                        <include>**/*Runner.class</include>-->
+<!--&lt;!&ndash;                        <include>HomeRunner.class</include>&ndash;&gt;-->
+<!--                    </includes>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>

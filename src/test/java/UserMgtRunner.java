@@ -8,7 +8,9 @@ import org.junit.runner.RunWith;
                 "rerun:target/failed-scenarios/userMgtRunner.txt"},
         features = "src/main/resources/features/userMgt.feature",
         glue = {"steps"},
-        stepNotifications = true
+        stepNotifications = true,
+        tags = "@readFromExcel",
+        dryRun = false
 
 )
 

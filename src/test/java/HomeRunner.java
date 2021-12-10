@@ -8,10 +8,9 @@ import org.junit.runner.RunWith;
         "rerun:target/failed-scenarios/homeRunner.txt"},
         features = "src/main/resources/features/home.feature",
         glue = {"steps"},
-        stepNotifications = true
+        stepNotifications = true,
+        tags = "@navigation and @scenarioOutline"
 )
 public class HomeRunner {
 
 }
-//"html:target/homeRunner.html"
-//src/main/resources/features/home.feature

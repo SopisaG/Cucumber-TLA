@@ -17,8 +17,9 @@ public class DatabaseSteps {
                 break;
             case "login": impl.getUserMgtPage().loginBtn.click();
                 break;
-            case "submit" : impl.getUserMgtPage().submitBtn.click();
+            case "submit": impl.getUserMgtPage().submitBtn.click();
                 break;
+            case "send": impl.inputsPage().sendBtn.click();
             default:
                 System.out.println("button was not found");
         }
